@@ -14,7 +14,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.handly.model.IElementExtension;
 import org.eclipse.handly.model.ISourceConstruct;
 import org.eclipse.handly.model.ISourceElementExtension;
-import org.eclipse.handly.model.Property;
+import org.eclipse.handly.util.Property;
 
 /**
  * Represents a function defined in a Foo file.
@@ -26,8 +26,8 @@ public interface IFooDef
      * Parameter names property.
      * @see #getParameterNames()
      */
-    Property<String[]> PARAMETER_NAMES = new Property<String[]>(
-        "parameterNames");
+    Property<String[]> PARAMETER_NAMES = Property.get("parameterNames",
+        String[].class);
 
     /**
      * Returns the number of parameters of this function.
